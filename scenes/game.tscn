@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://b7ski0osu2kxc"]
+[gd_scene load_steps=8 format=4 uid="uid://b7ski0osu2kxc"]
 
+[ext_resource type="Script" uid="uid://r7k4s5wxi66h" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="Texture2D" uid="uid://dnak757xlmk58" path="res://textures/ground_stone.png" id="1_uwrxv"]
-[ext_resource type="Texture2D" uid="uid://e8kw5uako15q" path="res://textures/place_holder.png" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://dvbpv7yft3nnf" path="res://scenes/player.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://tgfmygkaht2x" path="res://scenes/music_controller.tscn" id="4_lbhrr"]
 
@@ -14,14 +14,10 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/2 = SubResource("TileSetAtlasSource_yqjtg")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
-texture = ExtResource("2_lnu2h")
-0:0/0 = 0
-
 [sub_resource type="TileSet" id="TileSet_lbhrr"]
-sources/0 = SubResource("TileSetAtlasSource_lbhrr")
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_iywne")
 
 [node name="Level" type="Node2D" parent="."]
 
@@ -32,12 +28,15 @@ tile_map_data = PackedByteArray("AAAAAAAAAgAAAAAAAAABAAAAAgAAAAAAAAACAAAAAgAAAAA
 tile_set = SubResource("TileSet_8cj0n")
 
 [node name="Walls" type="TileMapLayer" parent="Level/Tilemap"]
-tile_map_data = PackedByteArray("AAAPAAwAAAAAAAAAAAAPAA0AAAAAAAAAAAAPAA4AAAAAAAAAAAAPAA8AAAAAAAAAAAAPABAAAAAAAAAAAAAPABEAAAAAAAAAAAAQABEAAAAAAAAAAAARABEAAAAAAAAAAAASABEAAAAAAAAAAAATABEAAAAAAAAAAAAUABEAAAAAAAAAAAAVABEAAAAAAAAAAAAWABEAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_lbhrr")
 
 [node name="Objects" type="Node2D" parent="Level"]
+y_sort_enabled = true
 
-[node name="Player" parent="Level/Objects" instance=ExtResource("2_yqjtg")]
+[node name="WasteBucketContainer" type="Node2D" parent="Level/Objects"]
+y_sort_enabled = true
+
+[node name="Player" parent="Level/Objects/WasteBucketContainer" instance=ExtResource("2_yqjtg")]
 position = Vector2(304, 240)
 
 [node name="MusicController" parent="." instance=ExtResource("4_lbhrr")]

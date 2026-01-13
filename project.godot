@@ -12,8 +12,12 @@ config_version=5
 
 config/name="A Week at the Plant"
 run/main_scene="uid://b7ski0osu2kxc"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://textures/icon.svg"
+
+[autoload]
+
+globals="*res://scripts/globals.gd"
 
 [display]
 

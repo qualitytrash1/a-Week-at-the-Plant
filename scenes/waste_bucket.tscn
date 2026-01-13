@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmbcsqgadpafu"]
+
+[ext_resource type="Texture2D" uid="uid://pa74cp0scunc" path="res://textures/waste_bucket_big.png" id="1_qdy7k"]
+
+[node name="WasteBucket" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qdy7k")
