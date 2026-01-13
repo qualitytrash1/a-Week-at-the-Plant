@@ -24,23 +24,24 @@ script = ExtResource("1_qhqgy")
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3vyb7")
 
-[node name="Sprite" type="AnimatedSprite2D" parent="."]
+[node name="Camera" type="Camera2D" parent="."]
+
+[node name="Model" type="Node2D" parent="."]
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Model"]
 position = Vector2(-8, -8)
 sprite_frames = SubResource("SpriteFrames_g2els")
 animation = &"normal"
 centered = false
 
-[node name="Hands" type="Node2D" parent="Sprite"]
+[node name="Hands" type="Node2D" parent="Model/Sprite"]
 
-[node name="HandRight" type="Sprite2D" parent="Sprite/Hands"]
+[node name="HandRight" type="Sprite2D" parent="Model/Sprite/Hands"]
 position = Vector2(-7, 5)
 texture = ExtResource("2_g2els")
 centered = false
 
-[node name="HandLeft" type="Sprite2D" parent="Sprite/Hands"]
+[node name="HandLeft" type="Sprite2D" parent="Model/Sprite/Hands"]
 position = Vector2(18, 5)
 texture = ExtResource("2_g2els")
 centered = false
-
-[node name="Camera" type="Camera2D" parent="."]
-position_smoothing_speed = 32.0
