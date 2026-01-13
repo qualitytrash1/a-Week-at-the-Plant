@@ -20,5 +20,5 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
-
+  
 	camera.global_position = round(camera.global_position)
