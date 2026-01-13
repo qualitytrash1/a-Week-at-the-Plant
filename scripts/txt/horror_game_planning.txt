@@ -1,0 +1,9 @@
+concept: Your an employee at the abandoned nuclear plant
+
+visuals: dark, 12 colors only
+
+enemies: Mutated people and animals
+
+other things: 
+Safe and unsafe zones,
+you turn into a mutant if you stay in the radiation zones too long.
